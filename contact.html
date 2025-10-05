@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact - Muhammad Rakan Yusra</title>
+
+    <link rel="shortcut icon" href="assets/images/favicons.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+      body { font-family:'Inter',sans-serif; background: #fff; color:#111; overflow-x:hidden; }
+      h1,h2,h3{ font-family: 'Bebas Neue', sans-serif; }
+      .menu-line{ transition: all .25s ease; }
+      .menu-btn.open .menu-line:nth-child(1){ transform: rotate(45deg) translateY(8px); }
+      .menu-btn.open .menu-line:nth-child(2){ opacity: 0; }
+      .menu-btn.open .menu-line:nth-child(3){ transform: rotate(-45deg) translateY(-8px); }
+      .tilt-wrapper { transform: rotate(-6deg); }
+      
+      .menu-line {
+        transition: all 0.25s ease;
+      }
+      .menu-btn.open .menu-line:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+      .menu-btn.open .menu-line:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-btn.open .menu-line:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+      .nav.open {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <!-- header/nav same -->
+    <header class="relative min-h-[36vh] overflow-hidden">
+      <div class="absolute inset-0 flex">
+        <div class="w-2/3 bg-[#8AC7FF]"></div>
+        <div class="w-1/3 bg-[#FFE47A]"></div>
+      </div>
+
+      <div class="absolute top-10 right-10 z-50">
+        <button id="menuButton" class="menu-btn relative w-9 h-9 flex flex-col justify-between items-center focus:outline-none">
+          <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+          <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+          <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+        </button>
+      </div>
+
+      <nav id="navMenu" class="nav fixed inset-0 flex flex-col items-center justify-center text-black text-4xl font-bold z-40 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out bg-white/80 backdrop-blur-md">
+        <ol class="space-y-8 uppercase tracking-widest">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="projects.html" class="hover:underline">Projects</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ol>
+      </nav>
+
+      <div class="relative z-10 px-8 md:px-20 pt-12 pb-10">
+        <h1 class="text-[2.25rem] md:text-[4rem] text-black">Contact</h1>
+        <p class="mt-4 text-black/80 max-w-2xl">Want to collaborate? Drop a short message below — I'll respond as soon as possible.</p>
+      </div>
+    </header>
+
+    <main class="py-16 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+        <!-- left big tilted heading -->
+        <div class="flex-1 hidden lg:block">
+          <h2 class="text-[5rem] leading-tight font-black transform -rotate-6">Let's<br/>Work<br/>Together</h2>
+        </div>
+
+        <!-- form card -->
+        <div class="flex-1">
+          <div class="tilt-wrapper bg-white shadow-2xl rounded-3xl p-8 md:p-12">
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                <input id="name" class="w-full mt-2 p-3 border rounded-md focus:outline-none" required />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Email</label>
+                <input id="email" type="email" class="w-full mt-2 p-3 border rounded-md focus:outline-none" required />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea id="message" rows="6" class="w-full mt-2 p-3 border rounded-md focus:outline-none" required></textarea>
+              </div>
+
+              <button type="submit" class="bg-black text-white px-6 py-3 rounded-md font-semibold hover:opacity-90">Send Message</button>
+              <p id="form-status" class="text-sm text-gray-500 mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-10 border-t border-gray-300 text-center text-gray-700 bg-white">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-6">
+        <nav>
+          <ol class="flex space-x-6 justify-center">
+            <li><a href="https://github.com/rakunberacun" target="_blank" rel="noopener"><img src="assets/images/social-links/github.svg" alt="GitHub" class="w-8 h-8" /></a></li>
+            <li><a href="https://www.linkedin.com/in/muhammad-rakan-yusra/" target="_blank" rel="noopener"><img src="assets/images/social-links/linkedin.svg" alt="LinkedIn" class="w-8 h-8" /></a></li>
+          </ol>
+        </nav>
+        <p class="text-sm">&copy; <span id="year"></span> — Designed by <a href="https://github.com/rakanysr" class="underline">Rakan Yusra</a>.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

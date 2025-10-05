@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Muhammad Rakan Yusra</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+      body { font-family: 'Inter', sans-serif; background: #fff; color: #111; overflow-x:hidden; }
+      h1,h2,h3{ font-family: 'Bebas Neue', sans-serif; }
+      .menu-line{ transition: all .25s ease; }
+      .menu-btn.open .menu-line:nth-child(1){ transform: rotate(45deg) translateY(8px); }
+      .menu-btn.open .menu-line:nth-child(2){ opacity: 0; }
+      .menu-btn.open .menu-line:nth-child(3){ transform: rotate(-45deg) translateY(-8px); }
+      .nav.open{ transform: translateX(0); opacity: 1; }
+      /* card 3D smoothing */
+      .card-3d { transform-style: preserve-3d; will-change: transform; }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <header class="relative h-[50vh] flex items-center overflow-hidden">
+    <!-- Background split -->
+    <div class="absolute inset-0 flex">
+        <div class="w-1/2 bg-[#8AC7FF]"></div>
+        <div class="w-1/2 bg-[#FFE47A]"></div>
+    </div>
+
+    <!-- Decorative Circle -->
+    <div class="absolute top-[-30%] right-[-20%] w-[600px] h-[600px] rounded-full bg-[#8AC7FF] opacity-100"></div>
+
+    <!-- Menu Button -->
+    <div class="absolute top-8 right-8 z-50">
+        <button id="menuButton" class="menu-btn relative w-9 h-9 flex flex-col justify-between items-center focus:outline-none">
+        <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+        <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+        <span class="menu-line block w-8 h-[2px] bg-black rounded"></span>
+        </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="navMenu" class="nav fixed inset-0 flex flex-col items-center justify-center text-black text-4xl font-bold z-40 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out bg-white/80 backdrop-blur-md">
+        <ol class="space-y-8 uppercase tracking-widest text-center">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="projects.html" class="hover:underline">Projects</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ol>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 px-10 md:px-20 max-w-3xl">
+        <h1 class="text-[2.8rem] md:text-[5rem] leading-tight text-black uppercase font-black">
+        Projects
+        </h1>
+        <p class="mt-4 text-lg md:text-xl font-light text-black/80 max-w-2xl">
+        A curated selection of works — from game art to educational and tech prototypes, built with creativity and precision.
+        </p>
+    </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <main class="bg-white py-20 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Selected Work</h2>
+
+        <!-- grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card template repeated; swap src/title/desc -->
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform will-change-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://private-user-images.githubusercontent.com/111475474/486525458-2f419bdf-4e3c-4c45-ad37-0a2b7f9180fe.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk2OTEzOTAsIm5iZiI6MTc1OTY5MTA5MCwicGF0aCI6Ii8xMTE0NzU0NzQvNDg2NTI1NDU4LTJmNDE5YmRmLTRlM2MtNGM0NS1hZDM3LTBhMmI3ZjkxODBmZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAwNVQxOTA0NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNTc3Yjg1ODJlY2UyYjUyNTM3ZGIxMGU4ZGZjNGMwNTk0NTdkMjJkZmZjYjE5ZGRiMTFkNTYzNGU3MmZhZTVlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.19K3Qwqhx6DoOdKCABpjg3plfiBav2cZEtAgbbBIwpI" alt="Tamagosui" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">Tamagosui — Virtual Pet Game</h3>
+              <p class="mt-2 text-sm text-gray-600">Virtual pet with NFT minting on Sui blockchain. Frontend: Vite + Vue/React. Demo & repo included.</p>
+            </div>
+          </article>
+
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://private-user-images.githubusercontent.com/111475474/476345627-0bd58b8d-7ead-4b37-be51-35d8b3b80ea3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk2OTEzOTEsIm5iZiI6MTc1OTY5MTA5MSwicGF0aCI6Ii8xMTE0NzU0NzQvNDc2MzQ1NjI3LTBiZDU4YjhkLTdlYWQtNGIzNy1iZTUxLTM1ZDhiM2I4MGVhMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAwNVQxOTA0NTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MWRiMDM0MjllNzMyMWJlMWM1Y2I3ZWNmYTc4ZGJlNjAxMDM1ZjVhOTYxZWM1MTg0YjA0YWVmMDk1NzEzYjhiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.WGPktybUnv72GoRNitWg9uBnROrQzoXnRGdu4M7B_e0" alt="Stacks Project" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">Stacks Bootcamp Project</h3>
+              <p class="mt-2 text-sm text-gray-600">Diploma NFT minting prototype built on Stacks. Frontend with Next.js (prototype).</p>
+            </div>
+          </article>
+
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://media.licdn.com/dms/image/v2/D562DAQETOsvs57CPzQ/profile-treasury-image-shrink_8192_8192/B56ZlTbLfEI8Ao-/0/1758041258412?e=1760299200&v=beta&t=0bm3NXQ6XPeJifRtkKjz6u0Zf-vq--vxnAkfq7g7pAg" alt="LogiLearn" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">LogiLearn — Year II Project</h3>
+              <p class="mt-2 text-sm text-gray-600">Educational app prototype (SRS, SWDD, UI mockups). Planned stack: Flutter, Node.js, MySQL.</p>
+            </div>
+          </article>
+
+          <!-- My Work entries from old index -->
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="assets/images/work/1.png" alt="3D Design" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">3D Design</h3>
+              <p class="mt-2 text-sm text-gray-600">Modeling and animation created in Blender; renders & motion tests included.</p>
+            </div>
+          </article>
+
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="assets/images/work/3.png" alt="Drawing" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">Drawing</h3>
+              <p class="mt-2 text-sm text-gray-600">Character & concept sketches made with Photoshop and Clip Studio Paint.</p>
+            </div>
+          </article>
+
+          <article class="card-3d bg-white rounded-2xl shadow-lg p-4 md:p-6 transform-gpu transition-transform" data-tilt data-tilt-max="12" data-tilt-scale="1.03">
+            <div class="overflow-hidden rounded-lg">
+              <img src="assets/images/work/2.png" alt="UI/UX" class="w-full h-44 object-cover"/>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-xl font-semibold">Logo & UI/UX Design</h3>
+              <p class="mt-2 text-sm text-gray-600">Designs & mockups for design thinking coursework.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- more button -->
+        <div class="mt-12 text-center">
+          <a href="index.html" class="inline-block border-2 border-black px-6 py-3 font-semibold hover:bg-black hover:text-white transition uppercase">Back to Home</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-300 text-center text-gray-700 bg-white">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-6">
+        <nav>
+          <ol class="flex space-x-6 justify-center">
+            <li><a href="https://github.com/rakunberacun" target="_blank" rel="noopener"><img src="assets/images/social-links/github.svg" alt="GitHub" class="w-8 h-8" /></a></li>
+            <li><a href="https://www.linkedin.com/in/muhammad-rakan-yusra/" target="_blank" rel="noopener"><img src="assets/images/social-links/linkedin.svg" alt="LinkedIn" class="w-8 h-8" /></a></li>
+          </ol>
+        </nav>
+        <p class="text-sm">&copy; <span id="year"></span> — Designed by <a href="https://github.com/rakanysr" class="underline">Rakan Yusra</a>.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
